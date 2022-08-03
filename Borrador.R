@@ -11,7 +11,7 @@ data_2016 <- read_csv("2016.csv")%>%
             rename( Calification = `Happiness Score`)
 View(data_2016)
 head(data_2016)
-hola
+prueba
 
 #Comparar regiones entre si
 
