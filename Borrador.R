@@ -9,9 +9,11 @@ library(cowplot)
 setwd("C:/Users/Samuel/Desktop/Data.Science UCAB/ProyectoFinal")
 data_2016 <- read_csv("2016.csv")%>% 
             rename( Calification = `Happiness Score`)
+data_2016$`Lower Confidence Interval` = NULL
+data_2016$`Upper Confidence Interval` = NULL
+
 View(data_2016)
 head(data_2016)
-prueba
 
 # Comparacion de niveles de felicidad entre regiones
 
