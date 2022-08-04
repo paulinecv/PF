@@ -109,11 +109,11 @@ grafica6 <- filter(tabla3, Region %in% c("Southern Asia", "Sub-Saharan Africa"))
 grafica6
 
 # Regresion lineal: puntaje = intercepto + B*PIB_per_capita 
-modelo_1 <- lm(puntaje ~ PIB_per_capita, data = tabla3, na.action = na.exclude)
+modelo_1 <- lm(Calification ~ PIB_per_capita, data = data_2016, na.action = na.exclude)
 summary(modelo_1)
 
 #Grafico de dispersion
-grafico7 <- ggplot(tabla3, aes(PIB_per_capita, puntaje)) +
+grafico7 <- ggplot(data_2016, aes(PIB_per_capita, Calification)) +
             geom_point() +
             geom_smooth(method = "lm", colour = "Red")
 grafico7
