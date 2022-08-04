@@ -13,7 +13,7 @@ View(data_2016)
 head(data_2016)
 prueba
 
-# Comparar regiones entre si
+# Comparacion de niveles de felicidad entre regiones
 
 tabla1 <- data_2016 %>% 
               group_by(Region) %>% 
@@ -21,10 +21,16 @@ tabla1 <- data_2016 %>%
               arrange(-average) %>% 
               ungroup()
 
+mean_calification <- mean(data_2016$Calification)
+
+grafica1 <- ggplot(data = tabla1, aes(x = Region, y = average, fill = Region))+
+  geom_bar(stat = "summary", fun = mean)+
+  geom_hline(yintercept=mean_calification, linetype="dashed", color = "red")
+grafica1
+
 
 # Que variable tienen mayor ponderacion en el nivel de Felicidad
 
-mean_calification <- mean(data_2016$Calification)
 
 GDPporc <- mean(data_2016$`Economy (GDP per Capita)`) * 100 / mean_calification
 familyporc <- mean(data_2016$Family) * 100 / mean_calification
@@ -39,5 +45,6 @@ tabla2 <- data.frame(Variables = c("GDP", "Family", "Health", "Freedom", "Corrup
                      Porcentajes = c(GDPporc, familyporc, healthporc, freedomporc,
                                      corruptionporc, generosityporc, dystopiaporc))
 
-ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
+grafica2 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
   geom_bar(stat = "summary", fun = mean)
+grafica2
