@@ -25,9 +25,10 @@ mean_calification <- mean(data_2016$Calification)
 
 grafica1 <- ggplot(data = tabla1, aes(x = Region, y = average, fill = Region))+
   geom_bar(stat = "summary", fun = mean)+
-  geom_hline(yintercept=mean_calification, linetype="dashed", color = "red")
-grafica1
+  geom_hline(yintercept=mean_calification, linetype="dashed", color = "#CD0000", size = 2)
 
+grafica1 +
+  theme(axis.text.x = element_text(angle = 70, hjust = 1, ))
 
 # Distribucion normal del comportamiento de las calificaciones de Felicidad, con una recta horizontal de la media
 
@@ -61,4 +62,6 @@ tabla2 <- data.frame(Variables = c("GDP", "Family", "Health", "Freedom", "Corrup
 
 grafica3 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
   geom_bar(stat = "summary", fun = mean)
-grafica3
+
+grafica3 +
+  theme(axis.text.x = element_text(angle = 70, hjust = 1, ))
