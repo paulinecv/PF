@@ -155,6 +155,8 @@ grafico10 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
 grafico10
 
 #Aqui se hace un grafico con multiples variables
+#Aqui se hace un grafico con multiples variables (prueba de git)
+
 
 grafico_11<- data_2016 %>% ggplot() + 
   geom_point(aes(Familia , Calificacion)) +
