@@ -2,8 +2,6 @@ library(tidyverse)
 library(readxl)
 library(readr)
 library(ggplot2)
-
-install.packages('cowplot')
 library(cowplot)
 
 setwd("C:/Users/Samuel/Desktop/Data.Science UCAB/ProyectoFinal")
@@ -31,8 +29,22 @@ grafica1 <- ggplot(data = tabla1, aes(x = Region, y = average, fill = Region))+
 grafica1
 
 
-# Que variable tienen mayor ponderacion en el nivel de Felicidad
+# Distribucion normal del comportamiento de las calificaciones de Felicidad, con una recta horizontal de la media
 
+grafica2 <- ggplot(data = data_2016, aes(Calification))+
+  geom_histogram(color =  "#5F9EA0",  fill = "#8EE5EE",   alpha = .5,
+                 position = "dodge", binwidth = .10 ,aes(y = ..density..))+
+  stat_function(fun = dnorm,
+                args = list(mean = mean(data_2016$Calification),
+                            sd = sd(data_2016$Calification)),
+                col = "#BF3EFF",
+                size = 1)+
+  geom_vline(aes(xintercept = mean(Calification)), 
+             color = "#698B22", linetype = "dashed", size = 1.5)
+grafica2
+
+
+# Que variable tienen mayor ponderacion en el nivel de Felicidad
 
 GDPporc <- mean(data_2016$`Economy (GDP per Capita)`) * 100 / mean_calification
 familyporc <- mean(data_2016$Family) * 100 / mean_calification
@@ -47,6 +59,6 @@ tabla2 <- data.frame(Variables = c("GDP", "Family", "Health", "Freedom", "Corrup
                      Porcentajes = c(GDPporc, familyporc, healthporc, freedomporc,
                                      corruptionporc, generosityporc, dystopiaporc))
 
-grafica2 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
+grafica3 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
   geom_bar(stat = "summary", fun = mean)
-grafica2
+grafica3
