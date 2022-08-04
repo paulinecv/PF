@@ -165,6 +165,13 @@ grafico_11<- data_2016 %>% ggplot() +
 
 grafico_11
 
+grafico_12 <- data_2016 %>% ggplot() + 
+  geom_point(aes(data_2016$`Esperanza_vida` , Calificacion)) +
+  geom_smooth(aes(data_2016$`Esperanza_vida`, Calificacion), method=lm)+
+  xlab('Salud/Esperanza de vida')
+grafico_12
+
+
 
 
 
