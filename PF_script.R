@@ -3,6 +3,11 @@ library(readxl)
 library(readr)
 library(ggplot2)
 library(cowplot)
+install.packages("car")
+library(car)
+library(boot)
+install.packages("QuantPsyc")
+library(QuantPsyc)
 
 setwd("C:/Users/Samuel/Desktop/Data.Science UCAB/ProyectoFinal")
 data_2016 <- read_csv("2016.csv")%>% 
@@ -102,3 +107,13 @@ grafica6 <- filter(tabla3, Region %in% c("Southern Asia", "Sub-Saharan Africa"))
   geom_point() +
   facet_grid(. ~ Region)
 grafica6
+
+# Regresion lineal: puntaje = intercepto + B*PIB_per_capita 
+modelo_1 <- lm(puntaje ~ PIB_per_capita, data = tabla3, na.action = na.exclude)
+summary(modelo_1)
+
+#Grafico de dispersion
+grafico7 <- ggplot(tabla3, aes(PIB_per_capita, puntaje)) +
+            geom_point() +
+            geom_smooth(method = "lm", colour = "Red")
+grafico7
