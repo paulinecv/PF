@@ -155,7 +155,11 @@ grafico10 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
 grafico10
 
 #Aqui se hace un grafico con multiples variables
-#Aqui se hace un grafico con multiples variables (prueba de git)
+
+#Creo que solo deberiamos usar el plot grid de abajo
+#los tres primeros sugieren una relacion mas clara entre felicidad y las variables
+#mientras que el ultimo "Libertades", no es tan clara porque parece ser mas dispersa.
+
 
 
 grafico_11<- data_2016 %>% ggplot() + 
@@ -190,10 +194,12 @@ plot_grid(
   grafico_14
 )
 
+# Regresion lineal: puntaje = intercepto + B*Libertades 
+modelo_2 <- lm(Calificacion ~ Libertades, data = data_2016, na.action = na.exclude)
+summary(modelo_2)
 
-
-
-
+#el modelo 2 sugiere que aunque las libertades si son significativas, el error 
+#standard es mucho mayor que con el PIb per capita.
 
 
 
