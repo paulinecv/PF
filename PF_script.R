@@ -25,7 +25,7 @@ data_2016$`Upper Confidence Interval` = NULL
 View(data_2016)
 head(data_2016)
 
-# Comparacion de niveles de felicidad entre regiones
+# Grafica1. Comparacion de niveles de felicidad entre regiones
 
 tabla1 <- data_2016 %>% 
   group_by(Region) %>% 
@@ -44,7 +44,7 @@ grafica1 +
   theme(axis.text.x = element_text(angle = 70, hjust = 1))
 
 
-# Que variable tienen mayor ponderacion en el nivel de Felicidad
+# Grafica2. Ponderacion de variable en el nivel de Felicidad
 
 GDPporc <- mean(data_2016$PIB_per_capita) * 100 / mean_calificacion
 familiaPorc <- mean(data_2016$Familia) * 100 / mean_calificacion
@@ -67,9 +67,7 @@ grafica2 +
   theme(axis.text.x = element_text(angle = 70, hjust = 1, ))
 
 
-# Graficas sobre la relacion del PIB per capita con las 4 variables encuestadas del infome de la felicidad "Familia, Libertades, Generosidad, Corrupcion"
-# Con esto se busca hallar una relacion de las variables encuestas que respondieron las personas con la variable calculada del PIB per capita
-# La comparacion se realiza un cuadro comparativo por cada region de los datos
+# Grafica3. La relacion del PIB per capita con las 4 variables encuestadas
 
 tabla3 <- data_2016 %>% 
   group_by(Region, PIB_per_capita) %>% 
@@ -87,9 +85,7 @@ grafica3 <- filter(tabla3, Region %in% c("Australia and New Zealand", "Western E
 grafica3
 
 
-# Graficas sobre la relacion de la Esperanza de vida con las 4 variables encuestadas del infome de la felicidad "Familia, Libertades, Generosidad, Corrupcion"
-# Con esto se busca hallar una relacion de las variables encuestas que respondieron las personas con la variable calculada de la Esperanza de vida
-# La comparacion se realiza un cuadro comparativo por cada region de los datos
+# Grafica4. La relacion de la Esperanza de vida con las 4 variables encuestadas
 
 tabla4 <- data_2016 %>% 
   group_by(Region, Esperanza_vida) %>% 
