@@ -64,7 +64,7 @@ View(data_2016)
 
 
 ```
-Los datos del Informe Mundial de la Felicidad no necesitaron una limpieza debido a que estaban organizados de una forma que sirvió a la perfección para el análisis que se buscaba hacer. Sin embargo, se puede ver en los códigos anteriores que se realizó un cambio de nombre a las variables de inglés a español para así poder tener todo el trabajo en un idioma.
+Los datos del Informe Mundial de la Felicidad no necesitaron una limpieza debido a que estaban organizados de una forma que sirvió a la perfección para el análisis que se buscaba hacer. Sin embargo, se realizó un cambio de nombre a las variables de inglés a español para así poder tener todo el trabajo en un idioma, y también se eliminaron unas columnas que eran irrelevantes para el estudio que se quería realizar.
 
 # **_Analisis_**
 
