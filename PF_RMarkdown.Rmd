@@ -151,7 +151,32 @@ grafica3
 
 Como podemos observar en la **Grafica3** en el eje x de nuestro eje cartesiano tenemos los niveles de PIB per cápita de las cuatro diferentes regiones, y en el eje y tenemos el puntaje que es la suma de los puntajes de las cuatro variables encuestas del informe. Para esta grafica podemos ver en los puntos de los cuadros como se ubican los diferentes países de las regiones tomando en consideración el PIB per cápita y las cuatro variables encuestadas, en donde observamos que existen diferentes puntajes de las variables encuestadas para un mismo nivel de PIB per capital y viceversa, un ejemplo más claro es el cuadro del Este de Europa en donde la mayoría de los países se alinean cercanos al mismo nivel de PIB per cápita pero en relación con el puntaje de las variables encuestadas varia en todo el rango de medición. Por lo cual, no podríamos sugerir que existe una relación entre el PIB per cápita y las respuestas de las personas en la encuesta de Gallup.
 
-# **Conclusiones**
+### **4. Relacion de la Esperanza de vida con las 4 variables encuestadas**
+
+En este cuarto apartado haremos la comparación de la variable de la Esperanza de vida con las cuatro variables del informe que fueron traídas de las encuestas de Gallup que son la Familia, las Libertades, la Generosidad y la Corrupción. Se busca hallar si existe alguna relación entre los niveles de la Esperanza de vida de los países con las respuestas de las personas en la encuesta de Gallup. Podremos ver en la **Grafica4** dicha comparación dividida en cuatro cuadros representando las principales regiones con el nivel de felicidad más alto.
+
+```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
+tabla4 <- data_2016 %>% 
+  group_by(Region, Esperanza_vida) %>% 
+  summarise(puntaje = sum(Familia, Libertades, Generosidad, 
+                          Corrupcion)) %>% 
+  arrange(-puntaje) %>% 
+  ungroup() 
+
+grafica4 <- filter(tabla4, Region %in% c("Australia and New Zealand", "Western Europe",
+                                         "North America","Latin America and Caribbean")) %>%
+  ggplot(aes(Esperanza_vida, puntaje, color = Region)) +
+  geom_point(size = 2) +
+  facet_grid(. ~ Region)+
+  ggtitle("Grafica4. Relacion de la Esperanza de vida con las 4 variables encuestadas" )
+grafica4
+
+```
+
+Como podemos observar en la **Grafica4** en el eje x de nuestro eje cartesiano tenemos los niveles de Esperanza de vida de las cuatro diferentes regiones, y en el eje y tenemos el puntaje que es la suma de los puntajes de las cuatro variables encuestas del informe. Para esta grafica podemos ver en los puntos de los cuadros como se ubican los diferentes países de las regiones tomando en consideración la Esperanza de vida y las cuatro variables encuestadas, en donde observamos que existen diferentes puntajes de las variables encuestadas para un mismo nivel de Esperanza de vida y viceversa, un ejemplo más claro es el cuadro del Este de Europa en donde la mayoría de los países se alinean cercanos al mismo nivel de Esperanza de vida pero en relación con el puntaje de las variables encuestadas varia en todo el rango de medición. Por lo cual, no podríamos sugerir que existe una relación entre el Esperanza de vida y las respuestas de las personas en la encuesta de Gallup.
+
+
+# **_Conclusiones_**
 
 El análisis de los datos del Informe Mundial de la Felicidad reflejaron que el PIB per cápita tiene una alta correlación con la felicidad en cada país, además es la variable que tiene más relevancia en el puntaje de la felicidad. De hecho, en los gráficos se pudo observar que esta variable fue la que menor desviación estándar tiene, esto indica que la variación en los datos es menor que en las otras variables. 
 
