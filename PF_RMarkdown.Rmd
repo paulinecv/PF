@@ -152,7 +152,7 @@ Como podemos observar en la **Grafica3** en el eje x de nuestro eje cartesiano t
 
 ### **4. Relacion de la Esperanza de vida con las 4 variables encuestadas**
 
-En este cuarto apartado haremos la comparación de la variable de la Esperanza de vida con las cuatro variables del informe que fueron traídas de las encuestas de Gallup que son la Familia, las Libertades, la Generosidad y la Corrupción. Se busca hallar si existe alguna relación entre los niveles de la Esperanza de vida de los países con las respuestas de las personas en la encuesta de Gallup. Podremos ver en la **Grafica4** dicha comparación dividida en cuatro cuadros representando las principales regiones con el nivel de felicidad más alto.
+En este cuarto apartado haremos la comparación de la variable de la Esperanza de vida con las cuatro variables del informe que fueron traídas de las encuestas de Gallup que son la Familia, las Libertades, la Generosidad y la Corrupción. Se busca hallar si existe alguna relación entre los niveles de la Esperanza de vida de los países con las respuestas de las personas en la encuesta de Gallup. Podremos ver en la **Grafica4** dicha comparación dividida en cuatro cuadros representando las principales regiones con el nivel de felicidad más alto..
 
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
 tabla4 <- data_2016 %>% 
