@@ -70,7 +70,6 @@ data_2016
 
 ```
 
-
 Para la composicion del analisis del trabajo se dividira en 6 partes en donde se daran respuesta a las 6 interrogantes o objetivos especificos planteados en la introduccion del trabajo.
 
 ### **1. Niveles de Felicidad por Regiones**
