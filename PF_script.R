@@ -202,5 +202,3 @@ summary(modelo_2)
 #standard es mucho mayor que con el PIb per capita.
 
 
-
-
