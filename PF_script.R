@@ -37,25 +37,11 @@ mean_calificacion <- mean(data_2016$Calificacion)
 
 grafica1 <- ggplot(data = tabla1, aes(x = Region, y = Medias, fill = Region))+
   geom_bar(stat = "summary", fun = mean)+
-  geom_hline(yintercept=mean_calificacion, linetype="dashed", color = "#CD0000", size = 2)
+  geom_hline(yintercept=mean_calificacion, linetype="dashed", color = "#CD0000", size = 2)+
+  ggtitle("Grafica1. Niveles de Felicidad por Regiones" )
 
 grafica1 +
-  theme(axis.text.x = element_text(angle = 70, hjust = 1, ))
-
-
-# Distribucion normal del comportamiento de las calificaciones de Felicidad, con una recta horizontal de la media
-
-grafica2 <- ggplot(data = data_2016, aes(Calificacion))+
-  geom_histogram(color =  "#5F9EA0",  fill = "#8EE5EE",   alpha = .5,
-                 position = "dodge", binwidth = .10 ,aes(y = ..density..))+
-  stat_function(fun = dnorm,
-                args = list(mean = mean(data_2016$Calificacion),
-                            sd = sd(data_2016$Calificacion)),
-                col = "#BF3EFF",
-                size = 1)+
-  geom_vline(aes(xintercept = mean(Calificacion)), 
-             color = "#698B22", linetype = "dashed", size = 1.5)
-grafica2
+  theme(axis.text.x = element_text(angle = 70, hjust = 1))
 
 
 # Que variable tienen mayor ponderacion en el nivel de Felicidad
@@ -73,10 +59,11 @@ tabla2 <- data.frame(Variables = c("GDP", "Familia", "Esperanza_vida", "Libertad
                      Porcentajes = c(GDPporc, familiaPorc, VidaPorc, LibertadesPorc,
                                      CorrupcionPorc, GenerosidadPorc, DystopiaPorc))
 
-grafica3 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
-  geom_bar(stat = "summary", fun = mean)
+grafica2 <- ggplot(data = tabla2, aes(x = Variables, y = Porcentajes, fill = Variables))+
+  geom_bar(stat = "summary", fun = mean)+
+  ggtitle("Grafica2. Ponderacion en el nivel de Felicidad" )
 
-grafica3 +
+grafica2 +
   theme(axis.text.x = element_text(angle = 70, hjust = 1, ))
 
 
@@ -91,25 +78,13 @@ tabla3 <- data_2016 %>%
   arrange(-puntaje) %>% 
   ungroup() 
 
-grafica4 <- filter(tabla3, Region %in% c("Australia and New Zealand", "Western Europe",
+grafica3 <- filter(tabla3, Region %in% c("Australia and New Zealand", "Western Europe",
                                          "North America","Latin America and Caribbean")) %>%
   ggplot(aes(PIB_per_capita, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica4
-
-grafica5 <- filter(tabla3, Region %in% c("Eastern Asia", "Middle East and Northern Africa",
-                                         "Central and Eastern Europe", "Southeastern Asia")) %>%
-  ggplot(aes(PIB_per_capita, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica5
-
-grafica6 <- filter(tabla3, Region %in% c("Southern Asia", "Sub-Saharan Africa")) %>%
-  ggplot(aes(PIB_per_capita, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica6
+  geom_point(size = 2) +
+  facet_grid(. ~ Region)+
+  ggtitle("Grafica3. Relacion del PIB per capita con las 4 variables encuestadas" )
+grafica3
 
 
 # Graficas sobre la relacion de la Esperanza de vida con las 4 variables encuestadas del infome de la felicidad "Familia, Libertades, Generosidad, Corrupcion"
@@ -123,25 +98,13 @@ tabla4 <- data_2016 %>%
   arrange(-puntaje) %>% 
   ungroup() 
 
-grafica7 <- filter(tabla4, Region %in% c("Australia and New Zealand", "Western Europe",
+grafica4 <- filter(tabla4, Region %in% c("Australia and New Zealand", "Western Europe",
                                          "North America","Latin America and Caribbean")) %>%
   ggplot(aes(Esperanza_vida, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica7
-
-grafica8 <- filter(tabla4, Region %in% c("Eastern Asia", "Middle East and Northern Africa",
-                                         "Central and Eastern Europe", "Southeastern Asia")) %>%
-  ggplot(aes(Esperanza_vida, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica8
-
-grafica9 <- filter(tabla4, Region %in% c("Southern Asia", "Sub-Saharan Africa")) %>%
-  ggplot(aes(Esperanza_vida, puntaje, color = Region)) +
-  geom_point() +
-  facet_grid(. ~ Region)
-grafica9
+  geom_point(size = 2) +
+  facet_grid(. ~ Region)+
+  ggtitle("Grafica4. Relacion de la Esperanza de vida con las 4 variables encuestadas" )
+grafica4
 
 
 # Regresion lineal: puntaje = intercepto + B*PIB_per_capita 
