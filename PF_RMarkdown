@@ -1,0 +1,37 @@
+---
+title: "Como se mide la felicidad?"
+author: "P. Avolese - S. García - S. González - C. Graterol - L. Velasco"
+date: '2022-08-08'
+output: html_document
+---
+
+# **_Introducción_** 
+
+En el proyecto final se utilizará una data llamada ["World Happiness Report"](https://www.kaggle.com/datasets/unsdsn/world-happiness) del año 2016 el cual contiene la medición de 157 países, esta proporciona información sobre distintos indicadores que sirven para calcular la felicidad en distintos países alrededor del mundo. Este informe clasifica los países del más feliz al menos feliz basándose en las puntuaciones y calificaciones de siete variables, las cuales la mayoría de estas variables tienen relación con las encuestas mundiales de Gallup, están formadas por más de 100 preguntas sobre diferentes temas como las leyes, alimentación, infraestructura, buenos empleos, entre otras. publicando su primer informe en el año 2012 calificando a distintos países en todos los continentes del mundo.
+
+Encontramos una importancia en este informe debido a la relación que tendría la felicidad en las decisiones migratorias de las personas en donde se podría ver una similitud en lo que llamamos felicidad con la calidad de vida. Esta es una de las decisiones más importantes a la hora de emigrar, _¿dónde será el mejor lugar para dar comienzo a una nueva vida?_, esto en un país como Venezuela con altos niveles de migración es algo que todos en algún momento hemos oído ya sea por familiares o amigos, por lo cual, se plantearan en el estudio las siguientes interrogantes a tratar:
+
+- **_¿Cuáles regiones tienen los mayores y peores niveles de felicidad?_** En esta interrogante queremos comparar los niveles de felicidad entre las diferentes regiones y calcular una media del nivel de felicidad de todas las regiones
+
+- **_¿Que variable tienen mayor ponderación en el nivel de Felicidad?_** En esta interrogante queremos ver cuanto peso tienen en el cálculo de la felicidad las siete variables que son tomadas en cuenta
+
+- **_¿Hay relación entre el PIB per cápita con las 4 variables encuestadas del informe de la felicidad?_** En esta interrogante queremos ver si existe una relación en cuanto al PIB per cápita y las variables de la Familia, Libertades, Generosidad y Corrupción, las cuales son medidas por las encuestas de Gallup
+
+- **_¿Hay relación entre la Esperanza de vida con las 4 variables encuestadas del informe de la felicidad?_** En esta interrogante queremos ver si existe una relación en cuanto a la Esperanza de vida y las variables de la Familia, Libertades, Generosidad y Corrupción, las cuales son medidas por las encuestas de Gallup
+
+- **_¿Cómo es la correlación entre el PIB per cápita y el nivel de felicidad?_** En esta interrogante queremos observar si existe una relación ante aumento o reducciones del PIB per cápita equivalen a un efecto igual en el nivel de felicidad
+
+- **_¿El comportamiento de las demás variables presentan la misma correlación que entre el PIB per cápita y el nivel de felicidad?_** En esta interrogante queremos observar si la correlación de las demás variables del informe con el nivel de felicidad presenta una relación diferente a la encontrada con el PIB per cápita
+
+
+# **_Metodología_**
+
+En estos datos, se encuentran diversas variables que utilizaremos en este trabajo para dar respuestas a las preguntas planteadas posteriormente. A continuación, se expondrán las siete variables a utilizar:
+
+- **PIB per Cápita:** El PIB per cápita es un indicador económico que mide la relación existente entre el nivel de renta de un país y su población. Tiene datos que fueron calculados como proyecciones de los valores del 2014, además la ecuación utiliza el logaritmo natural del PIB per cápita debido a que se adapta mejor al resto de datos que el PIB per cápita por sí solo.
+
+- **Esperanza de vida:** La esperanza de vida es un indicador que mide el promedio de años que se esperaría que una persona viva, basado en el nivel de mortalidad de un determinado grupo de población. Estos datos son series de tiempo construidas con datos extraídos de la Organización Mundial de la Salud y de los Indicadores de Desarrollo Mundial.
+
+- **La familia, Libertad, generosidad y las percepciones de corrupción:** Estas cuatro variables son valores extraídos de las encuestas mundiales de Gallup, encuestas binarias donde se responde 0 o 1 a diversas preguntas.
+
+- **Dystopia:** Es el nombre de un país hipotético que tiene los valores promedios más bajos del mundo entre 2013 y 2015 para cada una de las variables. En el informe Dystopia tiene la utilidad de pautar una referencia con la que se pueda comparar los valores de los demás países.
