@@ -36,6 +36,11 @@ En estos datos, se encuentran diversas variables que utilizaremos en este trabaj
 
 - **Dystopia:** Es el nombre de un país hipotético que tiene los valores promedios más bajos del mundo entre 2013 y 2015 para cada una de las variables. En el informe Dystopia tiene la utilidad de pautar una referencia con la que se pueda comparar los valores de los demás países.
 
+
+# **_Analisis_**
+
+En primer lugar, Lo correspondiente con los datos tratados para este trabajo fueron los del Informe Mundial de la Felicidad del año 2016, dicho datos ya venían estructurados y sin ningún tipo de NAs, por lo cual no se necesitó una limpieza profunda de los datos, Sin embargo, para ajustar los datos con los objetivos planteados se realizó un cambio de nombre a las variables de inglés a español para así poder tener todo el trabajo en un idioma, y también se elimaron dos columnas de los datos los cuales no añaden ningún tipo de información al trabajo por lo que se decidieron omitir.
+
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
 library(tidyverse)
 library(readxl)
@@ -60,18 +65,17 @@ data_2016$`Lower Confidence Interval` = NULL
 data_2016$`Upper Confidence Interval` = NULL
 
 
-View(data_2016)
+data_2016
 
 
 ```
-Los datos del Informe Mundial de la Felicidad no necesitaron una limpieza debido a que estaban organizados de una forma que sirvió a la perfección para el análisis que se buscaba hacer. Sin embargo, se realizó un cambio de nombre a las variables de inglés a español para así poder tener todo el trabajo en un idioma, y también se eliminaron unas columnas que eran irrelevantes para el estudio que se quería realizar.
 
-# **_Analisis_**
 
 Para la composicion del analisis del trabajo se dividira en 6 partes en donde se daran respuesta a las 6 interrogantes o objetivos especificos planteados en la introduccion del trabajo.
 
+### **1. Niveles de Felicidad por Regiones**
 
-1. En este primer apartado haremos la respectiva comparacion y medicion del nivel de felicidad de las regiones observadas en el estudio, dichas regiones son 10 las cuales son: Norte América, Europa Oriental, América Latina y el Caribe, Asia Oriental, Medio Oriente y África del Norte, Europa central y oriental, Sudeste de Asia, Asia meridional y Sub-Saharan África. En el **Grafico1** podemos observar la comparación de las regiones mencionadas anteriormente y su nivel de felicidad correspondiente, también en el mismo grafico se puede observar una la línea de corte que nos indica el promedio de la clasificación de felicidad de todas las regiones.
+En este primer apartado haremos la respectiva comparacion y medicion del nivel de felicidad de las regiones observadas en el estudio, dichas regiones son 10 las cuales son: Norte América, Europa Oriental, América Latina y el Caribe, Asia Oriental, Medio Oriente y África del Norte, Europa central y oriental, Sudeste de Asia, Asia meridional y Sub-Saharan África. En el **Grafico1** podemos observar la comparación de las regiones mencionadas anteriormente y su nivel de felicidad correspondiente, también en el mismo grafico se puede observar una la línea de corte que nos indica el promedio de la clasificación de felicidad de todas las regiones.
 
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
 tabla1 <- data_2016 %>% 
@@ -94,8 +98,9 @@ grafica1 +
 
 Como podemos observar en la **Grafica1** el mayor nivel de felicidad en cuanto a regiones se lo lleva _Australia y New Zelanda_ con un puntaje de 7.33 puntos, y por otro lado vemos con el peor puntaje de Felicidad a _Sub-Saharan África_ con un puntaje de 4.14 puntos. Promediando los datos de los niveles de felicidad de cada región obtenemos un promedio de felicidad mundial de 5.38 puntos, el cual se puede evidenciar en la línea roja del grafico en la cual vemos que las regiones que se aproximan a este promedio son _Europa Central y Oriental_, _Medio Oriente y África del Norte_ y _El Sudeste de Asia_.
 
+### **2. Ponderacion en el nivel de Felicidad**
 
-2. En este segundo apartado haremos la medición de cuanto representa cada variable en el peso total del nivel de felicidad indicado en la **Grafica2**, para ello, utilizaremos el promedio de felicidad mundial obtenido en el apartado anterior como nuestro nivel de felicidad base, y para las variables utilizaremos el promedio mundial de cada una de las distintas variables y así ver cuanta ponderación tiene cada variable con respecto al nivel de felicidad promedio.
+En este segundo apartado haremos la medición de cuanto representa cada variable en el peso total del nivel de felicidad indicado en la **Grafica2**, para ello, utilizaremos el promedio de felicidad mundial obtenido en el apartado anterior como nuestro nivel de felicidad base, y para las variables utilizaremos el promedio mundial de cada una de las distintas variables y así ver cuanta ponderación tiene cada variable con respecto al nivel de felicidad promedio.
 
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
 GDPporc <- mean(data_2016$PIB_per_capita) * 100 / mean_calificacion
@@ -122,7 +127,9 @@ grafica2 +
 
 Como podemos observar en la **Grafica2** la variable con mayor peso en la medición de la felicidad es Dystopia con un 43.21% del porcentaje total, y les siguen el PIB per cápita con un 17.72% y la Familia con un 14.75% volviendo a estas tres variables las más importantes en la medición de la felicidad, para complementar tenemos a la Esperanza de vida con un 10.36%, la Libertad con un 6.89%, la Generosidad con un 4.51% y por último la Corrupción con un 2.56%. A pesar de que Dystopia sea la variable con más peso, esta para el estudio no aporta mucha información debido a que se refiere a una variable de ajusta, por lo cual el PIB per cápita si nos diese una mejor información en cuanto a su relevancia en el nivel de felicidad.
 
-3.  En este tercer apartado haremos la comparación de la variable del PIB per cápita con las cuatro variables del informe que fueron traídas de las encuestas de Gallup que son la Familia, las Libertades, la Generosidad y la Corrupción. Se busca hallar si existe alguna relación entre los niveles de PIB per cápita de los países con las respuestas de las personas en la encuesta de Gallup. Podremos ver en la **Grafica3** dicha comparación dividida en cuatro cuadros representando las principales regiones con el nivel de felicidad más alto.
+### **3. Relacion del PIB per capita con las 4 variables encuestadas**
+
+En este tercer apartado haremos la comparación de la variable del PIB per cápita con las cuatro variables del informe que fueron traídas de las encuestas de Gallup que son la Familia, las Libertades, la Generosidad y la Corrupción. Se busca hallar si existe alguna relación entre los niveles de PIB per cápita de los países con las respuestas de las personas en la encuesta de Gallup. Podremos ver en la **Grafica3** dicha comparación dividida en cuatro cuadros representando las principales regiones con el nivel de felicidad más alto.
 
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE}
 tabla3 <- data_2016 %>% 
