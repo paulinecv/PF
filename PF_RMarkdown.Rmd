@@ -183,11 +183,11 @@ Como podemos observar en la **Grafica4** en el eje x de nuestro eje cartesiano t
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE} 
 modelo_1 <- lm(Calificacion ~ PIB_per_capita, data = data_2016, na.action = na.exclude)
 summary(modelo_1)
-grafico5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
+grafica5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
             geom_smooth(method = "lm", colour = "Red")+
   ggtitle("Grafica5. Relacion entre el PIB per-cápita y la felicidad" )
-grafico5
+grafica5
 ```
 
 En el presente apartado se realizará una descripción de los aspectos más destacados de la relación entre PIB per-cápita y la felicidad. En primer lugar, para determinar esto se hizo uso del **modelo de regresión lineal**, cuya función es reflejar la dependencia que existe entre las dos variables, en este caso sería entre el PIB per cápita y el puntaje de la felicidad. Luego se procedió a hacer el gráfico con la función de ggplot, al igual que todos los gráficos anteriores, el cual **demostró que existe una correlación positiva**. Esto último implica que a medida que crece el PIB per cápita, aumentará el puntaje de la felicidad. Además, se estimaron los siguientes indicadores:
