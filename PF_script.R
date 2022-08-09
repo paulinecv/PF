@@ -113,6 +113,7 @@ grafica5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_smooth(method = "lm", colour = "Red")
 grafica5
 
+
 #Aqui se hace un grafico con multiples variables
 
 #Creo que solo deberiamos usar el plot grid de abajo
