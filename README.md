@@ -12,5 +12,5 @@ Términos claves: Felicidad, PIB per cápita , correlación, Informe Mundial de 
 
 _Nota:_ Descripción de las carpetas en Github:
 - PF2_samuel-gonzalez.R = Archivo .R con los códigos utilizados en el trabajo.
-- PF_RMarkdown.Rmd = Archivo .Rmd con el Markdown de la presentación del trabajo.
+- PF2_samuel-gonzalez.Rmd = Archivo .Rmd con el Markdown de la presentación del trabajo.
 - 2016.csv = Datos sin modificar utilizados para el trabajo.
