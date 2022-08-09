@@ -94,6 +94,7 @@ tabla4 <- data_2016 %>%
   arrange(-puntaje) %>% 
   ungroup() 
 
+
 grafica4 <- filter(tabla4, Region %in% c("Australia and New Zealand", "Western Europe",
                                          "North America","Latin America and Caribbean")) %>%
   ggplot(aes(Esperanza_vida, puntaje, color = Region)) +
