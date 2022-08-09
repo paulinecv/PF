@@ -5,6 +5,7 @@ date: '2022-08-08'
 output: html_document
 ---
 
+
 # **_Introducción_** 
 
 En el proyecto final se utilizará una data llamada ["World Happiness Report"](https://www.kaggle.com/datasets/unsdsn/world-happiness) del año 2016 el cual contiene la medición de 157 países, esta proporciona información sobre distintos indicadores que sirven para calcular la felicidad en distintos países alrededor del mundo. Este informe clasifica los países del más feliz al menos feliz basándose en las puntuaciones y calificaciones de siete variables, las cuales la mayoría de estas variables tienen relación con las encuestas mundiales de Gallup, están formadas por más de 100 preguntas sobre diferentes temas como las leyes, alimentación, infraestructura, buenos empleos, entre otras. publicando su primer informe en el año 2012 calificando a distintos países en todos los continentes del mundo.
