@@ -46,6 +46,11 @@ En estos datos, se encuentran diversas variables que fueron estudiadas en este t
 
 Como parte del analisis exploratorio, se hicieron distintas visualizaciones que ayudaron a tener una idea sobre la informacion que se refleja en las encuentas.
 
+Una vez tomadas en consideración la descripción de las variables que se usaron para realizar el análisis, se puede proseguir con la metodología que se utilizó. Por un lado para la comparación de niveles de felicidad entre regiones, se tomó la data, se agrupó por regiones, se hizo un resumen de las medias de la calificación (este fue el nombre en español que se le dio al Puntaje de Felicidad), y se desagrupó. Consecuentemente, se utilizaron las funciones “ggplot”, “geom_bar”, “geom_hline” y “ggtitle” para el gráfico correspondiente. A partir de esta metodología, se puede realizar un estudio de las variables de manera correcta debido a que el cálculo de la media permite comparar los puntajes de felicidad de cada país. 
+
+Luego, se realizó un cálculo de la media de cada una de las variables para analizar cual variable tiene el mayor porcentaje en el nivel de felicidad. Además, se realizó el gráfico con “ggplot”, “geom_bar” y “ggtitle”. Por otro lado, para hacer una comparación entre el PIB per cápita y las distintas variables se agrupó por región y por PIB per cápita y se realizó una suma guardada en una variable puntaje de la suma de las variables familia, libertades, generosidad y corrupción. Al igual que para los gráficos de los análisis anteriormente descritos se utilizaron las funciones “ggplot”, “geom_point”, “ggtitle” y “facet_grid”. 
+
+
 Tambien como un primer acercamiento al analisis inferencial, que pudiese ser aplicado en un estudio mas profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes obtenidos.
 
 De este modo, se procede a explicar lo observado durante el trabajo.
