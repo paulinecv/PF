@@ -108,10 +108,10 @@ modelo_1 <- lm(Calificacion ~ PIB_per_capita, data = data_2016, na.action = na.e
 summary(modelo_1)
 
 #Grafico de dispersion
-grafico10 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
+grafico5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
             geom_smooth(method = "lm", colour = "Red")
-grafico10
+grafico5
 
 #Aqui se hace un grafico con multiples variables
 
