@@ -218,25 +218,21 @@ grafica6<- data_2016 %>% ggplot() +
   geom_point(aes(Familia , Calificacion)) +
   geom_smooth(aes(Familia,Calificacion),method=lm)+
   xlab('Familia')
-grafica6
 
 grafica7 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`Esperanza_vida` , Calificacion)) +
   geom_smooth(aes(data_2016$`Esperanza_vida`, Calificacion), method=lm)+
   xlab('Salud/Esperanza de vida')
-grafica7
 
 grafica8 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`PIB_per_capita` , Calificacion)) +
   geom_smooth(aes(data_2016$`PIB_per_capita`,Calificacion),method=lm)+
   xlab('GDP')
-grafica8
 
 grafica9 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`Libertades` , Calificacion)) +
   geom_smooth(aes(data_2016$`Libertades`,Calificacion),method=lm)+
   xlab('Libertades')
-grafica9
 
 plot_grid(
   grafica6, 
