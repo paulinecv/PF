@@ -108,10 +108,10 @@ modelo_1 <- lm(Calificacion ~ PIB_per_capita, data = data_2016, na.action = na.e
 summary(modelo_1)
 
 #Grafico de dispersion
-grafico5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
+grafica5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
             geom_smooth(method = "lm", colour = "Red")
-grafico5
+grafica5
 
 #Aqui se hace un grafico con multiples variables
 
@@ -121,36 +121,35 @@ grafico5
 
 
 
-grafico_11<- data_2016 %>% ggplot() + 
+grafica6<- data_2016 %>% ggplot() + 
   geom_point(aes(Familia , Calificacion)) +
   geom_smooth(aes(Familia,Calificacion),method=lm)+
   xlab('Familia')
+grafica6
 
-grafico_11
-
-grafico_12 <- data_2016 %>% ggplot() + 
+grafica7 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`Esperanza_vida` , Calificacion)) +
   geom_smooth(aes(data_2016$`Esperanza_vida`, Calificacion), method=lm)+
   xlab('Salud/Esperanza de vida')
-grafico_12
+grafica7
 
-grafico_13 <- data_2016 %>% ggplot() + 
+grafica8 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`PIB_per_capita` , Calificacion)) +
   geom_smooth(aes(data_2016$`PIB_per_capita`,Calificacion),method=lm)+
   xlab('GDP')
-grafico_13
+grafica8
 
-grafico_14 <- data_2016 %>% ggplot() + 
+grafica9 <- data_2016 %>% ggplot() + 
   geom_point(aes(data_2016$`Libertades` , Calificacion)) +
   geom_smooth(aes(data_2016$`Libertades`,Calificacion),method=lm)+
   xlab('Libertades')
-grafico_14
+grafica9
 
 plot_grid(
-  grafico_11, 
-  grafico_12,
-  grafico_13,
-  grafico_14
+  grafica6, 
+  grafica7,
+  grafica8,
+  grafica9
 )
 
 # Regresion lineal: puntaje = intercepto + B*Libertades 
