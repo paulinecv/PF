@@ -44,9 +44,9 @@ En estos datos, se encuentran diversas variables que fueron estudiadas en este t
 
 - **Dystopia:** Es el nombre de un país hipotético que tiene los valores promedios más bajos del mundo entre 2013 y 2015 para cada una de las variables. En el informe Dystopia tiene la utilidad de pautar una referencia con la que se pueda comparar los valores de los demás países.
 
-Como parte del analisis exploratorio, se hicieron distintas visualizaciones que nos ayudaran a tener una idea sobre la informacion que se refleja en las encuentas.
+Como parte del analisis exploratorio, se hicieron distintas visualizaciones que ayudaron a tener una idea sobre la informacion que se refleja en las encuentas.
 
-Tambien como un primer acercamiento al analisis inferencial, que pudiese ser aplicado en un estudio mas profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes.
+Tambien como un primer acercamiento al analisis inferencial, que pudiese ser aplicado en un estudio mas profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes obtenidos.
 
 De este modo, se procede a explicar lo observado durante el trabajo.
 
