@@ -111,7 +111,8 @@ summary(modelo_1)
 #Grafico de dispersion
 grafica5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
-            geom_smooth(method = "lm", colour = "Red")
+            geom_smooth(method = "lm", colour = "Red")+
+  ggtitle("Grafica5. Relacion entre el PIB per-cápita y la felicidad" )
 grafica5
 
 
