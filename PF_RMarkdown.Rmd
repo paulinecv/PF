@@ -8,9 +8,13 @@ output: html_document
 
 # **_Introducción_** 
 
-En el proyecto final se utilizará una data llamada ["World Happiness Report"](https://www.kaggle.com/datasets/unsdsn/world-happiness) del año 2016 el cual contiene la medición de 157 países, esta proporciona información sobre distintos indicadores que sirven para calcular la felicidad en distintos países alrededor del mundo. Este informe clasifica los países del más feliz al menos feliz basándose en las puntuaciones y calificaciones de siete variables, las cuales la mayoría de estas variables tienen relación con las encuestas mundiales de Gallup, están formadas por más de 100 preguntas sobre diferentes temas como las leyes, alimentación, infraestructura, buenos empleos, entre otras. publicando su primer informe en el año 2012 calificando a distintos países en todos los continentes del mundo.
+En el proyecto final se utilizará una data llamada ["World Happiness Report"](https://www.kaggle.com/datasets/unsdsn/world-happiness) del año 2016 el cual contiene la medición de 157 países, esta proporciona información sobre distintos indicadores que sirven para calcular la felicidad en distintos países alrededor del mundo. Este informe clasifica los países del más feliz al menos feliz basándose en las puntuaciones y calificaciones de siete variables, las cuales la mayoría de estas variables tienen relación con las encuestas mundiales de Gallup, están formadas por más de 100 preguntas sobre diferentes temas como las leyes, alimentación, infraestructura, buenos empleos, entre otras. Publicando su primer informe en el año 2012 calificando a distintos países en todos los continentes del mundo.
 
-Encontramos una importancia en este informe debido a la relación que tendría la felicidad en las decisiones migratorias de las personas en donde se podría ver una similitud en lo que llamamos felicidad con la calidad de vida. Esta es una de las decisiones más importantes a la hora de emigrar, _¿dónde será el mejor lugar para dar comienzo a una nueva vida?_, esto en un país como Venezuela con altos niveles de migración es algo que todos en algún momento hemos oído ya sea por familiares o amigos, por lo cual, se plantearan en el estudio las siguientes interrogantes a tratar:
+Justificion: El estudio de las variables economicas e indices en distintas areas que repercuten en la utilidad de las personas, como primer acercamiento a la evaluación de políticas públicas enfocadas en
+la calidad de vida.
+
+
+Encontramos una importancia (mas personal) en este informe debido a la relación que tendría la felicidad en las decisiones migratorias de las personas en donde se podría ver una similitud en lo que llamamos felicidad con la calidad de vida. Esta es una de las decisiones más importantes a la hora de emigrar, _¿dónde será el mejor lugar para dar comienzo a una nueva vida?_, esto en un país como Venezuela con altos niveles de migración es algo que todos en algún momento hemos oído ya sea por familiares o amigos, por lo cual, se plantearan en el estudio las siguientes interrogantes a tratar:
 
 - **_¿Cuáles regiones tienen los mayores y peores niveles de felicidad?_** En esta interrogante queremos comparar los niveles de felicidad entre las diferentes regiones y calcular una media del nivel de felicidad de todas las regiones.
 
@@ -28,9 +32,9 @@ Encontramos una importancia en este informe debido a la relación que tendría l
 # **_Metodología_**
 
 Se utilizaron los datos del World Hapiness Report (Gallup inc.) como punto de partida. Estos, no tenian
-valores faltantes o data que tuviese que ser imputada.
+valores faltantes o data que tuviese que ser imputada. 
 
-En estos datos, se encuentran diversas variables que utilizaremos en este trabajo para dar respuestas a las preguntas planteadas posteriormente. A continuación, se expondrán las siete variables a utilizar:
+En estos datos, se encuentran diversas variables que fueron estudiadas en este trabajo para observar que sugerian los datos sobre las preguntas planteadas en la seccion de arriba. A continuación, se expondrán las siete variables a utilizar:
 
 - **PIB per Cápita:** El PIB per cápita es un indicador económico que mide la relación existente entre el nivel de renta de un país y su población. Tiene datos que fueron calculados como proyecciones de los valores del 2014, además la ecuación utiliza el logaritmo natural del PIB per cápita debido a que se adapta mejor al resto de datos que el PIB per cápita por sí solo.
 
@@ -40,6 +44,11 @@ En estos datos, se encuentran diversas variables que utilizaremos en este trabaj
 
 - **Dystopia:** Es el nombre de un país hipotético que tiene los valores promedios más bajos del mundo entre 2013 y 2015 para cada una de las variables. En el informe Dystopia tiene la utilidad de pautar una referencia con la que se pueda comparar los valores de los demás países.
 
+Como parte del analisis exploratorio, se hicieron distintas visualizaciones que nos ayudaran a tener una idea sobre la informacion que se refleja en las encuentas.
+
+Tambien como un primer acercamiento al analisis inferencial, que pudiese ser aplicado en un estudio mas profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes.
+
+De este modo, se procede a explicar lo observado durante el trabajo.
 
 # **_Analisis_**
 
