@@ -10,11 +10,10 @@ output: html_document
 
 En el proyecto final se utilizará una data llamada ["World Happiness Report"](https://www.kaggle.com/datasets/unsdsn/world-happiness) del año 2016 el cual contiene la medición de 157 países, esta proporciona información sobre distintos indicadores que sirven para calcular la felicidad en distintos países alrededor del mundo. Este informe clasifica los países del más feliz al menos feliz basándose en las puntuaciones y calificaciones de siete variables, las cuales la mayoría de estas variables tienen relación con las encuestas mundiales de Gallup, están formadas por más de 100 preguntas sobre diferentes temas como las leyes, alimentación, infraestructura, buenos empleos, entre otras. Publicando su primer informe en el año 2012 calificando a distintos países en todos los continentes del mundo.
 
-Justificion: El estudio de las variables economicas e indices en distintas areas que repercuten en la utilidad de las personas, como primer acercamiento a la evaluación de políticas públicas enfocadas en
-la calidad de vida.
+Justificación: El estudio de las variables económicas e índices en distintas áreas que repercuten en la utilidad de las personas, como primer acercamiento a la evaluación de políticas públicas enfocadas en la calidad de vida.
 
+Encontramos una importancia (más personal) en este informe debido a la relación que tendría la felicidad en las decisiones migratorias de las personas en donde se podría ver una similitud en lo que llamamos felicidad con la calidad de vida. Esta es una de las decisiones más importantes a la hora de emigrar, _¿dónde será el mejor lugar para dar comienzo a una nueva vida?_, esto en un país como Venezuela con altos niveles de migración es algo que todos en algún momento hemos oído ya sea por familiares o amigos, por lo cual, se plantearan en el estudio las siguientes interrogantes a tratar:
 
-Encontramos una importancia (mas personal) en este informe debido a la relación que tendría la felicidad en las decisiones migratorias de las personas en donde se podría ver una similitud en lo que llamamos felicidad con la calidad de vida. Esta es una de las decisiones más importantes a la hora de emigrar, _¿dónde será el mejor lugar para dar comienzo a una nueva vida?_, esto en un país como Venezuela con altos niveles de migración es algo que todos en algún momento hemos oído ya sea por familiares o amigos, por lo cual, se plantearan en el estudio las siguientes interrogantes a tratar:
 
 - **_¿Cuáles regiones tienen los mayores y peores niveles de felicidad?_** En esta interrogante queremos comparar los niveles de felicidad entre las diferentes regiones y calcular una media del nivel de felicidad de todas las regiones.
 
@@ -31,10 +30,9 @@ Encontramos una importancia (mas personal) en este informe debido a la relación
 
 # **_Metodología_**
 
-Se utilizaron los datos del World Hapiness Report (Gallup inc.) como punto de partida. Estos, no tenian
-valores faltantes o data que tuviese que ser imputada. 
+Se utilizaron los datos del World Hapiness Report (Gallup inc.) como punto de partida. Estos, no tenían valores faltantes o data que tuviese que ser imputada. 
 
-En estos datos, se encuentran diversas variables que fueron estudiadas en este trabajo para observar que sugerian los datos sobre las preguntas planteadas en la seccion de arriba. A continuación, se expondrán las siete variables a utilizar:
+En estos datos, se encuentran diversas variables que fueron estudiadas en este trabajo para observar que sugerían los datos sobre las preguntas planteadas en la sección de arriba. A continuación, se expondrán las siete variables a utilizar:
 
 - **PIB per Cápita:** El PIB per cápita es un indicador económico que mide la relación existente entre el nivel de renta de un país y su población. Tiene datos que fueron calculados como proyecciones de los valores del 2014, además la ecuación utiliza el logaritmo natural del PIB per cápita debido a que se adapta mejor al resto de datos que el PIB per cápita por sí solo.
 
@@ -44,16 +42,14 @@ En estos datos, se encuentran diversas variables que fueron estudiadas en este t
 
 - **Dystopia:** Es el nombre de un país hipotético que tiene los valores promedios más bajos del mundo entre 2013 y 2015 para cada una de las variables. En el informe Dystopia tiene la utilidad de pautar una referencia con la que se pueda comparar los valores de los demás países.
 
-Como parte del analisis exploratorio, se hicieron distintas visualizaciones que ayudaron a tener una idea sobre la informacion que se refleja en las encuentas.
+Como parte del análisis exploratorio, se hicieron distintas visualizaciones que ayudaron a tener una idea sobre la información que se refleja en las encuestas.
 
-Una vez tomadas en consideración la descripción de las variables que se usaron para realizar el análisis, se puede proseguir con la metodología que se utilizó. Por un lado para la comparación de niveles de felicidad entre regiones, se tomó la data, se agrupó por regiones, se hizo un resumen de las medias de la calificación (este fue el nombre en español que se le dio al Puntaje de Felicidad), y se desagrupó. Consecuentemente, se utilizaron las funciones “ggplot”, “geom_bar”, “geom_hline” y “ggtitle” para el gráfico correspondiente. A partir de esta metodología, se puede realizar un estudio de las variables de manera correcta debido a que el cálculo de la media permite comparar los puntajes de felicidad de cada país. 
+Una vez tomadas en consideración la descripción de las variables que se usaron para realizar el análisis, se puede proseguir con la metodología que se utilizó. Por un lado, para la comparación de niveles de felicidad entre regiones, se tomó la data, se agrupó por regiones, se hizo un resumen de las medias de la calificación (este fue el nombre en español que se le dio al Puntaje de Felicidad), y se desagrupó. Consecuentemente, se utilizaron las funciones “ggplot”, “geom_bar”, “geom_hline” y “ggtitle” para el gráfico correspondiente. A partir de esta metodología, se puede realizar un estudio de las variables de manera correcta debido a que el cálculo de la media permite comparar los puntajes de felicidad de cada país. 
 
 Luego, se realizó un cálculo de la media de cada una de las variables para analizar cual variable tiene el mayor porcentaje en el nivel de felicidad. Además, se realizó el gráfico con “ggplot”, “geom_bar” y “ggtitle”. Por otro lado, para hacer una comparación entre el PIB per cápita y las distintas variables se agrupó por región y por PIB per cápita y se realizó una suma guardada en una variable puntaje de la suma de las variables familia, libertades, generosidad y corrupción. Al igual que para los gráficos de los análisis anteriormente descritos se utilizaron las funciones “ggplot”, “geom_point”, “ggtitle” y “facet_grid”. 
 
+También como un primer acercamiento al análisis inferencial, que pudiese ser aplicado en un estudio más profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes obtenidos.
 
-Tambien como un primer acercamiento al analisis inferencial, que pudiese ser aplicado en un estudio mas profundo, se hicieron distintas regresiones sobre la data para ver que sugerían los coeficientes obtenidos.
-
-De este modo, se procede a explicar lo observado durante el trabajo.
 
 # **_Analisis_**
 
