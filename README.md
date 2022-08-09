@@ -11,6 +11,6 @@ De acuerdo con esto, se siguió una metodología aplicando el método de Regresi
 Términos claves: Felicidad, PIB per cápita , correlación, Informe Mundial de la Felicidad, Gallup.
 
 _Nota:_ Descripción de las carpetas en Github:
-- PF_script.R = Archivo .R con los códigos utilizados en el trabajo.
+- PF2_samuel-gonzalez.R = Archivo .R con los códigos utilizados en el trabajo.
 - PF_RMarkdown.Rmd = Archivo .Rmd con el Markdown de la presentación del trabajo.
 - 2016.csv = Datos sin modificar utilizados para el trabajo.
