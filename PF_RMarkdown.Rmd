@@ -177,24 +177,25 @@ grafica4
 Como podemos observar en la **Grafica4** en el eje x de nuestro eje cartesiano tenemos los niveles de Esperanza de vida de las cuatro diferentes regiones, y en el eje y tenemos el puntaje que es la suma de los puntajes de las cuatro variables encuestas del informe. Para esta grafica podemos ver en los puntos de los cuadros como se ubican los diferentes países de las regiones tomando en consideración la Esperanza de vida y las cuatro variables encuestadas, en donde observamos que existen diferentes puntajes de las variables encuestadas para un mismo nivel de Esperanza de vida y viceversa, un ejemplo más claro es el cuadro del Este de Europa en donde la mayoría de los países se alinean cercanos al mismo nivel de Esperanza de vida pero en relación con el puntaje de las variables encuestadas varia en todo el rango de medición. Por lo cual, no podríamos sugerir que existe una relación entre el Esperanza de vida y las respuestas de las personas en la encuesta de Gallup.
 
 
-### **4. Relacion entre el PIB per-cápita y la felicidad**
+### **5. Relacion entre el PIB per-cápita y la felicidad**
 
  
 ```{r message=FALSE, warning=FALSE, eval=TRUE, echo=FALSE} 
 modelo_1 <- lm(Calificacion ~ PIB_per_capita, data = data_2016, na.action = na.exclude)
 summary(modelo_1)
-
-grafico10 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
+grafico5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
-            geom_smooth(method = "lm", colour = "Red")
-grafico10
+            geom_smooth(method = "lm", colour = "Red")+
+  ggtitle("Grafica5. Relacion entre el PIB per-cápita y la felicidad" )
+grafico5
 ```
 
-En el presente apartado se realizara una descripcion de los aspectos mas destacados de la relacion entre PIB per-cápita y la felicidad. En primer lugar, para determinar esto se hizo uso del **modelo de regresión lineal**, cuya función es reflejar la dependencia que existe entre las dos variables, en este caso sería entre el PIBpc y el puntaje de la felicidad. Luego se procedió a hacer el gráfico con la función de ggplot, al igual que todos los gráficos anteriores, el cual **demostró que existe una correlación positiva**. Esto último implica que a medida que crece el PIB per cápita, aumentará el puntaje de la felicidad. Además, se estimaron los siguientes indicadores:
+En el presente apartado se realizará una descripción de los aspectos más destacados de la relación entre PIB per-cápita y la felicidad. En primer lugar, para determinar esto se hizo uso del **modelo de regresión lineal**, cuya función es reflejar la dependencia que existe entre las dos variables, en este caso sería entre el PIB per cápita y el puntaje de la felicidad. Luego se procedió a hacer el gráfico con la función de ggplot, al igual que todos los gráficos anteriores, el cual **demostró que existe una correlación positiva**. Esto último implica que a medida que crece el PIB per cápita, aumentará el puntaje de la felicidad. Además, se estimaron los siguientes indicadores:
 
 - El coeficiente de regresión (B) es igual a 2.18, por lo que se puede suponer que     ante una variación en promedio de 1 % en el PIB p.c se verá reflejado en una         variación de 2.18 puntos en promedio en el índice de felicidad.
 - El R cuadrado ajustado arrojó un valor 0.62, lo que indica que para este modelo el   PIB p.c podría explicar en un 60% el comportamiento de la variable felicidad.
-- El p-value fue menor a 0.05, por lo tanto se rechaza la hipótesis nula de que no     existe relación entre las variables
+- El p-value fue menor a 0.05, por lo tanto, se rechaza la hipótesis nula de que no     existe relación entre las variables
+
 
 
 # **_Conclusiones_**
