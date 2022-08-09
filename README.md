@@ -4,4 +4,7 @@ Este trabajo tiene como marco el análisis la medición de los niveles de felici
 
 Términos claves: Felicidad, PIB per cápita , correlación, Informe Mundial de la Felicidad, Gallup.
 
-
+_Nota:_ Descripcion de las carpetas en Github:
+- PF_script.R = Archivo .R con los codigos utilizados en el trabajo
+- PF_RMarkdown.Rmd = Archvo .Rmd con el Markdown de la presentacion del informe
+- 2016.csv = Datos sin modificar utilizados para el trabajo
