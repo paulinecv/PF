@@ -112,7 +112,7 @@ summary(modelo_1)
 grafica5 <- ggplot(data_2016, aes(PIB_per_capita, Calificacion)) +
             geom_point() +
             geom_smooth(method = "lm", colour = "Red")+
-  ggtitle("Grafica5. Relacion entre el PIB per-cápita y la felicidad" )
+  ggtitle("Grafica5. Relacion entre el PIB per-capita y la felicidad" )
 grafica5
 
 
